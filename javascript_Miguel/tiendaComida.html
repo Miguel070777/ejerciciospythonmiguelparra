@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Comida</title>
+    <link rel="stylesheet" href="css/tiendaComida.css">
+</head>
+<body>
+    <header>
+        <h1>Tienda de Comida</h1>
+    </header>
+
+    <main>
+        <!-- Selección de mesas -->
+        <section id="mesas">
+            <h2>Selecciona una Mesa</h2>
+            <button onclick="selectTable(1)">Mesa 1</button>
+            <button onclick="selectTable(2)">Mesa 2</button>
+            <button onclick="selectTable(3)">Mesa 3</button>
+            <button onclick="selectTable(4)">Mesa 4</button>
+        </section>
+
+        <!-- Menú Desplegable de Comidas y Bebidas (Compartido) -->
+        <section class="menu">
+            <button onclick="toggleMenu('comidas-menu')">Comidas</button>
+            <div id="comidas-menu" class="dropdown-content">
+                <div class="item">
+                    <span>Pizza ($8.00)</span>
+                    <button class="btn-minus" onclick="changeQuantity('pizza', -1)">-</button>
+                    <span id="pizza-quantity">0</span>
+                    <button class="btn-plus" onclick="changeQuantity('pizza', 1)">+</button>
+                </div>
+                <div class="item">
+                    <span>Hamburguesa ($6.00)</span>
+                    <button class="btn-minus" onclick="changeQuantity('hamburguesa', -1)">-</button>
+                    <span id="hamburguesa-quantity">0</span>
+                    <button class="btn-plus" onclick="changeQuantity('hamburguesa', 1)">+</button>
+                </div>
+                <div class="item">
+                    <span>Tacos ($5.00)</span>
+                    <button class="btn-minus" onclick="changeQuantity('tacos', -1)">-</button>
+                    <span id="tacos-quantity">0</span>
+                    <button class="btn-plus" onclick="changeQuantity('tacos', 1)">+</button>
+                </div>
+            </div>
+            
+            <button onclick="toggleMenu('bebidas-menu')">Bebidas</button>
+            <div id="bebidas-menu" class="dropdown-content">
+                <div class="item">
+                    <span>Refresco ($2.00)</span>
+                    <button class="btn-minus" onclick="changeQuantity('refresco', -1)">-</button>
+                    <span id="refresco-quantity">0</span>
+                    <button class="btn-plus" onclick="changeQuantity('refresco', 1)">+</button>
+                </div>
+                <div class="item">
+                    <span>Café ($3.00)</span>
+                    <button class="btn-minus" onclick="changeQuantity('cafe', -1)">-</button>
+                    <span id="cafe-quantity">0</span>
+                    <button class="btn-plus" onclick="changeQuantity('cafe', 1)">+</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carrito por mesa -->
+        <section id="mesa1" class="mesa">
+            <h2>Mesa 1</h2>
+            <div class="dropdown">
+                <button onclick="toggleDropdown(1)">Ver Carrito</button>
+                <div id="cart-1" class="cart-content">
+                    <p id="cart-items-1">Tu carrito está vacío.</p>
+                    <p id="total-price-1">Total: $0.00</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="mesa2" class="mesa" style="display:none;">
+            <h2>Mesa 2</h2>
+            <div class="dropdown">
+                <button onclick="toggleDropdown(2)">Ver Carrito</button>
+                <div id="cart-2" class="cart-content">
+                    <p id="cart-items-2">Tu carrito está vacío.</p>
+                    <p id="total-price-2">Total: $0.00</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="mesa3" class="mesa" style="display:none;">
+            <h2>Mesa 3</h2>
+            <div class="dropdown">
+                <button onclick="toggleDropdown(3)">Ver Carrito</button>
+                <div id="cart-3" class="cart-content">
+                    <p id="cart-items-3">Tu carrito está vacío.</p>
+                    <p id="total-price-3">Total: $0.00</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="mesa4" class="mesa" style="display:none;">
+            <h2>Mesa 4</h2>
+            <div class="dropdown">
+                <button onclick="toggleDropdown(4)">Ver Carrito</button>
+                <div id="cart-4" class="cart-content">
+                    <p id="cart-items-4">Tu carrito está vacío.</p>
+                    <p id="total-price-4">Total: $0.00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/tiendaComida.js"></script>
+</body>
+</html>
